@@ -336,12 +336,35 @@ function handleMainSearch(e) {
 
 // Open WhatsApp with property information
 function openWhatsApp(propertyTitle) {
-    const phoneNumber = "265994232111"; // Replace with actual WhatsApp number
-    const message = `Hello, I'm interested in booking the ${propertyTitle} property. Can you provide more information?`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    // Ensure phone number is in international format (e.g., +265994232111)
+    const phoneNumber = "+265994232111"; // Include country code
+    const property = propertyTitle?.trim() || "property"; // Fallback if propertyTitle is undefined/null
     
-    window.open(whatsappUrl, '_blank');
+    // Validate inputs
+    if (!phoneNumber || !/^\+\d{10,15}$/.test(phoneNumber)) {
+        console.error("Invalid phone number format. Please use international format (e.g., +1234567890)");
+        return;
+    }
+    
+    if (!property) {
+        console.error("Property title is required");
+        return;
+    }
+
+    // Create a structured, professional message
+    const message = `Hello! I'm interested in booking "${property}". Could you please provide:
+- Availability details
+- Pricing information
+- Any additional requirements
+Thank you!`;
+
+    try {
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappUrl, '_blank');
+    } catch (error) {
+        console.error("Error creating WhatsApp URL:", error);
+    }
 }
 
 // Modal functionality
