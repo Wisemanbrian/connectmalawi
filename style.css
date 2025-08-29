@@ -59,13 +59,23 @@ header {
     color: var(--accent);
 }
 
-nav ul {
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-desktop ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
 }
 
-nav a {
+.nav-desktop a {
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -74,11 +84,11 @@ nav a {
     position: relative;
 }
 
-nav a:hover {
+.nav-desktop a:hover {
     color: var(--accent);
 }
 
-nav a::after {
+.nav-desktop a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -89,8 +99,67 @@ nav a::after {
     transition: width 0.3s;
 }
 
-nav a:hover::after {
+.nav-desktop a:hover::after {
     width: 100%;
+}
+
+.nav-mobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background: var(--dark);
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    padding: 1rem;
+}
+
+.nav-mobile.active {
+    left: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-mobile ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-mobile a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    display: block;
+    transition: background 0.3s;
+}
+
+.nav-mobile a:hover {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+.nav-mobile .mobile-user-actions {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .user-actions {
@@ -612,6 +681,10 @@ footer {
     justify-content: center;
 }
 
+.modal.active {
+    display: flex;
+}
+
 .modal-content {
     background: white;
     border-radius: 10px;
@@ -734,20 +807,23 @@ footer {
 }
 
 @media (max-width: 900px) {
-    .search-form {
-        grid-template-columns: 1fr;
+    .hamburger {
+        display: block;
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+
+    .user-actions {
+        display: none;
     }
 
     .header-content {
-        flex-direction: column;
-        gap: 1rem;
+        justify-content: space-between;
     }
 
-    nav ul {
-        gap: 1rem;
-    }
-
-    .filters-grid {
+    .search-form {
         grid-template-columns: 1fr;
     }
 }
@@ -755,11 +831,6 @@ footer {
 @media (max-width: 600px) {
     .search-content h1 {
         font-size: 2.2rem;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     .listings-grid {

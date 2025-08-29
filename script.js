@@ -416,3 +416,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// Hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileLinks = document.querySelectorAll('.nav-mobile a');
+    const mobileLoginBtn = document.getElementById('mobileLoginBtn');
+    const mobileSignupBtn = document.getElementById('mobileSignupBtn');
+
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    });
