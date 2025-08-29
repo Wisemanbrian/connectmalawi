@@ -251,7 +251,7 @@ header {
 }
 
 .search-box {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.489);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -429,7 +429,7 @@ header {
 }
 
 .filter-actions .btn {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem .5rem;
 }
 
 .listings-grid {
