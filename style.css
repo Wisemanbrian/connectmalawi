@@ -28,7 +28,7 @@ body {
 header {
     background: linear-gradient(to right, var(--dark), var(--primary));
     color: white;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
