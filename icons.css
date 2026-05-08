@@ -1,0 +1,49 @@
+/* ================= ICONS CSS ================= */
+
+/* Global icon spacing */
+i {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Logo icon */
+.icon-logo {
+    font-size: 1.6rem;
+    color: #ff385c;
+}
+
+/* Nav icons */
+nav a i {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Search input icons */
+.icon-input {
+    padding-left: 40px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 18px;
+}
+
+.icon-input.location {
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23999' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M168 0C75.1 0 0 75.1 0 168c0 87.8 144 344 168 344s168-256.2 168-344C336 75.1 260.9 0 168 0zm0 256c-48.6 0-88-39.4-88-88s39.4-88 88-88 88 39.4 88 88-39.4 88-88 88z'/%3E%3C/svg%3E");
+}
+
+.icon-input.calendar {
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23999' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M152 64c0-35.3-28.7-64-64-64S24 28.7 24 64v48H0v400h448V112h-24V64c0-35.3-28.7-64-64-64s-64 28.7-64 64v48H152V64z'/%3E%3C/svg%3E");
+}
+
+.icon-input.guests {
+    background-image: url("data:image/svg+xml,%3Csvg fill='%23999' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'%3E%3Cpath d='M96 128a64 64 0 1 0 0-128 64 64 0 0 0 0 128zm448 0a64 64 0 1 0 0-128 64 64 0 0 0 0 128zM320 256a96 96 0 1 0 0-192 96 96 0 0 0 0 192z'/%3E%3C/svg%3E");
+}
+
+/* Filter icons */
+.filters label i {
+    color: #ff385c;
+}
+
+/* Buttons icons */
+button i {
+    margin-right: 6px;
+}
